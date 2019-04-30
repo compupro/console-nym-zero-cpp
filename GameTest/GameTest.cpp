@@ -42,6 +42,17 @@ namespace GameTest
 			Logger::WriteMessage("\n");
 			player.playCard(1);
 			Logger::WriteMessage(const_cast<char*>(player.getHandString().c_str()));
+
+			player.bet(100);
+			try {
+				player.bet(1);
+			}
+			catch (const std::out_of_range) {
+				Logger::WriteMessage("\nSuccessfully rejected over-bet\n");
+			}
+			player.increaseBalance(1);
+			Logger::WriteMessage(const_cast<char*>(player.getBalanceString().c_str()));
+			player.bet(1);
 		}
 	};
 }

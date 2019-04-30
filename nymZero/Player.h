@@ -10,4 +10,7 @@ public:
 	void addToHand(int card);
 	int playCard(int value);
 	std::string getHandString();
+	double bet(double bet);
+	void increaseBalance(double amount);
+	std::string getBalanceString();
 };

@@ -30,3 +30,22 @@ std::string Player::getHandString() {
 	}
 	return handString;
 }
+
+double Player::bet(double bet) {
+	if ( bet > balance ) {
+		throw std::out_of_range("Player lacks required balance to bet this amount");
+	}
+	else {
+		balance -= bet;
+	}
+	return bet;
+}
+
+void Player::increaseBalance(double amount) {
+	balance += amount;
+}
+
+std::string Player::getBalanceString() {
+	std::string balString = "$";
+	return balString + std::to_string(balance);
+}
