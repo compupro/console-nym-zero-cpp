@@ -32,7 +32,8 @@ namespace GameTest
 		TEST_METHOD(TestMethod1)
 		{
 			Deck deck(1, 10, 0);
-			Player player(100.0);
+			Player player(100.0, true);
+			Assert::IsTrue(player.isHuman);
 			int card;
 			for (int i = 0; i < 4; i++) {
 				card = deck.draw();

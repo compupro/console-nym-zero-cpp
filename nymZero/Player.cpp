@@ -4,8 +4,9 @@
 #include <stdexcept>
 #include <string>
 
-Player::Player(double startingBalance) {
+Player::Player(double startingBalance, bool human) {
 	balance = startingBalance;
+	isHuman = human;
 }
 
 void Player::addToHand(int card) {
