@@ -4,7 +4,8 @@
 #include "Player.h"
 #include <vector>
 
-Game::Game(int numPlayers, int startingBalance, int maxCardValue, int cardCopies, int handSize) {
+Game::Game(int numPlayers, int startingBalance, int maxCardValue, int cardCopies, int handSize, int threshold) {
+	this->threshold = threshold; //TODO: heresy?
 	deck = new Deck(maxCardValue, cardCopies);
 	for (int p = 0; p < numPlayers - 1; p++) {
 		players.push_back(Player(startingBalance, false));

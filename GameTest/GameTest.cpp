@@ -4,6 +4,8 @@
 #include "../nymZero/Deck.cpp"
 #include "../nymZero/Player.h"
 #include "../nymZero/Player.cpp"
+#include "../nymZero/Game.h"
+#include "../nymZero/Game.cpp"
 #include <iostream>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -54,6 +56,16 @@ namespace GameTest
 			player.increaseBalance(1);
 			Logger::WriteMessage(const_cast<char*>(player.getBalanceString().c_str()));
 			player.bet(1);
+		}
+	};
+
+	TEST_CLASS(GameClassTest)
+	{
+	public:
+		TEST_METHOD(TestMedthod1)
+		{
+			//Players, money, maxVal, copies, handSize, threshold
+			Game game(2, 100, 4, 4, 4, 9);
 		}
 	};
 }

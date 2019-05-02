@@ -8,6 +8,7 @@ private:
 	std::vector<Player> players;
 	Deck* deck;
 	void drawCardsTo(Player player, int numCards);
+	int threshold;
 public:
-	Game(int players, int startingBalance, int maxCardValue, int cardCopies, int handSize);
+	Game(int players, int startingBalance, int maxCardValue, int cardCopies, int handSize, int threshold);
 };
