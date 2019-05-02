@@ -1,9 +1,13 @@
 #pragma once
 #include "Player.h"
+#include "Deck.h"
+#include <vector>
 
 class Game {
 private:
-	Player *players;
+	std::vector<Player> players;
+	Deck* deck;
+	void drawCardsTo(Player player, int numCards);
 public:
-	Game(int players, int startingBalance, int maxCardValue, int cardCopies);
+	Game(int players, int startingBalance, int maxCardValue, int cardCopies, int handSize);
 };
