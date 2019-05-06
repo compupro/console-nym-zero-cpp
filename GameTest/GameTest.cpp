@@ -66,6 +66,7 @@ namespace GameTest
 		{
 			//Players, money, maxVal, copies, handSize, threshold
 			Game game(2, 100, 4, 4, 4, 9);
+			game.playRound();
 		}
 	};
 }

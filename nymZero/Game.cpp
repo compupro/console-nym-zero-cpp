@@ -4,6 +4,8 @@
 #include "Player.h"
 #include <vector>
 #include <random>
+#include <iostream>
+#include <string>
 
 Game::Game(int numPlayers, int startingBalance, int maxCardValue, int cardCopies, int handSize, int threshold, unsigned seed) {
 	this->threshold = threshold;
@@ -24,5 +26,11 @@ void Game::drawCardsTo(Player player, int numCards) {
 }
 
 void Game::playRound() {
-
+	//Print out the round's starting state
+	int i = 1;
+	for (Player player : players) {
+		std::cout << (player.isHuman ? "Human " : "AI ");
+		std::cout << "(turn order: " + std::to_string(i) + ") has " + player.getBalanceString() + "\n";
+		i++;
+	}
 }
