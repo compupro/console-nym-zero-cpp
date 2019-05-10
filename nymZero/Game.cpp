@@ -17,6 +17,7 @@ Game::Game(int numPlayers, int startingBalance, int maxCardValue, int cardCopies
 	players.push_back(Player(startingBalance, true));
 	drawCardsTo(players.back(), handSize);
 	std::shuffle(players.begin(), players.end(), std::default_random_engine(seed));
+	srand(seed);
 }
 
 void Game::drawCardsTo(Player player, int numCards) {
@@ -32,5 +33,14 @@ void Game::playRound() {
 		std::cout << (player.isHuman ? "Human " : "AI ");
 		std::cout << "(turn order: " + std::to_string(i) + ") has " + player.getBalanceString() + "\n";
 		i++;
+	}
+	std::cout << "\n";
+	//Start betting phase
+	for (Player player : players) {
+		if (!player.isHuman) {
+			double bet = rand() % (int)player.getBalance() + 1;
+			std::cout << bet;
+			player.bet(bet);
+		}
 	}
 }

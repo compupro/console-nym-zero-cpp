@@ -50,3 +50,7 @@ std::string Player::getBalanceString() {
 	std::string balString = "$";
 	return balString + std::to_string(balance);
 }
+
+double Player::getBalance() {
+	return balance;
+}

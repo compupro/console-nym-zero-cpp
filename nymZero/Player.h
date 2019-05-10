@@ -14,4 +14,5 @@ public:
 	double bet(double bet);
 	void increaseBalance(double amount);
 	std::string getBalanceString();
+	double getBalance();
 };
