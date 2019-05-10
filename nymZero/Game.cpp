@@ -37,9 +37,15 @@ void Game::playRound() {
 	std::cout << "\n";
 	//Start betting phase
 	for (Player player : players) {
+		double bet;
 		if (!player.isHuman) {
-			double bet = rand() % (int)player.getBalance() + 1;
+			bet = rand() % (int)player.getBalance() + 1;
 			std::cout << bet;
+			player.bet(bet);
+		}
+		else { //TODO: input validation for 0 and negative bets
+			std::cout << "How much do you want to bet? You have: " + player.getBalanceString() + "\n";
+			std::cin >> bet;
 			player.bet(bet);
 		}
 	}
