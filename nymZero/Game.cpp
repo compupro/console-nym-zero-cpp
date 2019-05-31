@@ -40,13 +40,34 @@ void Game::playRound() {
 		double bet;
 		if (!player.isHuman) {
 			bet = rand() % (int)player.getBalance() + 1;
-			std::cout << bet;
+			//std::cout << bet;
 			player.bet(bet);
 		}
 		else { //TODO: input validation for 0 and negative bets
 			std::cout << "How much do you want to bet? You have: " + player.getBalanceString() + "\n";
 			std::cin >> bet;
 			player.bet(bet);
+		}
+	}
+	//Start playing phase
+	for (Player player : players) {
+		if (player.getHand().size() == 0) {
+			break;
+		}
+
+		if (!player.isHuman) {
+			//get a value based on hand
+			int position = rand() % player.getHand().size();
+			int value = player.getHand().at(position);
+			total += value;
+			//play that value
+		}
+		else {
+			//TODO: human interaction here
+		}
+
+		if (total > threshold) {
+			//lose
 		}
 	}
 }

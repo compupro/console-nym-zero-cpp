@@ -15,4 +15,5 @@ public:
 	void increaseBalance(double amount);
 	std::string getBalanceString();
 	double getBalance();
+	std::vector<int> getHand();
 };

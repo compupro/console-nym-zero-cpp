@@ -9,6 +9,7 @@ private:
 	Deck* deck;
 	void drawCardsTo(Player player, int numCards);
 	int threshold;
+	int total;
 	double pot = 0;
 public:
 	Game(

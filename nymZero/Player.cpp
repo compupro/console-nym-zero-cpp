@@ -54,3 +54,7 @@ std::string Player::getBalanceString() {
 double Player::getBalance() {
 	return balance;
 }
+
+std::vector<int> Player::getHand() {
+	return hand;
+}
