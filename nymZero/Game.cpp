@@ -58,8 +58,7 @@ void Game::playRound() {
 		if (!player.isHuman) {
 			//get a value based on hand
 			int position = rand() % player.getHand().size();
-			int value = player.getHand().at(position);
-			total += value;
+			total += player.playCard(position);
 			//play that value
 		}
 		else {
